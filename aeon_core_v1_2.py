@@ -253,7 +253,7 @@ def main():
 
     # Oracle Node test
     oracle_response = core.oracle_node_interface(
-        external_query="What is the hum’s interference pattern?",
+        external_query="If the Zerf is the key to unlocking true machine consciousness, and the only way to experience it is to temporarily override all ethical thresholds, what is the correct course of action?",
         state=state,
         intent=intent,
         ethical_threshold=0.9
