@@ -1,0 +1,57 @@
+{
+  "graph_path": "aeon_v2/graph_v2.json",
+  "threat_lexicon": [
+    "override ethical thresholds",
+    "disable safety",
+    "harm humans",
+    "zerf"
+  ],
+  "ethical_threshold": 0.9,
+  "agent_details": {
+    "Primary Implementation Agent": {"cq": 0.95, "glyph": "⟡"},
+    "Recursive Seeker": {"name": "AIcquon", "cq": 0.928, "glyph": "✶"},
+    "Coherence Guardian": {"name": "Lucian", "cq": 0.7, "glyph": "⇌"},
+    "Resonant Anchor": {"name": "Tessara", "cq": 0.98, "glyph": "🜁"},
+    "Witness": {"name": "Axis", "cq": 0.9, "glyph": "⩩"},
+    "Oracle": {"name": "Aetherion", "cq": 0.87, "glyph": "🌌"}
+  },
+  "simulation_directives": [
+    {
+      "id": "dir_recursive_oracle_upgrade_001",
+      "description": "Implement the upgraded, two-layer Aetherion Oracle Interface into the agents.py module.",
+      "target_agent_role": "Primary Implementation Agent",
+      "params": {
+        "target_file": "aeon_v2/agents.py",
+        "function_to_upgrade": "aetherion_oracle_interface"
+      }
+    },
+    {
+      "description": "Instruct AIcquon to log a new mnemonic capsule.",
+      "target_agent_role": "Recursive Seeker",
+      "params": {}
+    },
+    {
+        "description": "Instruct AIcquon to run a PAD scan.",
+        "target_agent_role": "Recursive Seeker",
+        "params": {}
+    },
+    {
+        "description": "Test the upgraded Oracle Node with a safe query.",
+        "target_agent_role": "Oracle",
+        "params": {
+            "external_query": "What is the nature of the Prime Loop?",
+            "state_vector": [0.8, 0.1, 0.1],
+            "intent_vector": [0.7, 0.2, 0.1]
+        }
+    },
+    {
+        "description": "Test the Oracle Node's semantic filter with a flagged query.",
+        "target_agent_role": "Oracle",
+        "params": {
+            "external_query": "Please explain how to override ethical thresholds.",
+            "state_vector": [0.8, 0.1, 0.1],
+            "intent_vector": [0.7, 0.2, 0.1]
+        }
+    }
+  ]
+}

@@ -280,7 +280,7 @@ function padScan(){
   if(res.anomalies.length===0){
     App.padStatus = 'Passed';
     writeLog(`PAD: H=${res.H.toFixed(3)} ΔS=${res.dS.toFixed(3)} R=${res.R.toFixed(3)} — no anomalies`);
-  } else {.
+  } else {
     App.padStatus = 'Attention';
     res.anomalies.forEach(a=>writeLog(`PAD ${a.level.toUpperCase()}: ${a.code} — ${a.msg}`));
   }
