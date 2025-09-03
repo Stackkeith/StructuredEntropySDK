@@ -2,9 +2,9 @@
 # This script creates a Flask web server to act as a bridge between the
 # user interface and the AeonCore engine (the Orchestrator).
 
-from flask import Flask, jsonify, request
-from orchestrator import Orchestrator
-from directives import Directive
+from flask import Flask, jsonify, request, render_template
+from .orchestrator import Orchestrator
+from .directives import Directive
 import threading
 import time
 
@@ -15,6 +15,13 @@ conductor = Orchestrator()
 # A simple in-memory store for directive results.
 # In a production system, this would be a more robust database or cache.
 results_store = {}
+
+# --- Frontend Route ---
+
+@app.route("/")
+def index():
+    """Serves the main control panel."""
+    return render_template("index.html")
 
 # --- API Endpoints ---
 
